@@ -1,0 +1,775 @@
+
+        :root {
+            --blush-pink: #F2C6CC;
+            --sage-green: #9FB6A5;
+            --cream: #FFF6E5;
+            --dusty-rose: #C48A92;
+            --dark-green: #5a7161;
+            --light-brown: #a08a7a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: #5a5a5a;
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .script-font {
+            font-family: 'Allura', cursive;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            display: inline-block;
+            background-color: var(--cream);
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--blush-pink);
+            z-index: 1;
+        }
+
+        /* Header & Navigation - RESPONSIVE IMPROVEMENTS */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 246, 229, 0.98);
+            padding: 15px 0;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: 'Allura', cursive;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: var(--dark-green);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--dusty-rose);
+            font-family: 'Allura', cursive;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: clamp(15px, 3vw, 30px);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-green);
+            font-weight: 500;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            transition: color 0.3s;
+            font-family: 'Playfair Display', serif;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--dusty-rose);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--dark-green);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* Home Section - RESPONSIVE IMPROVEMENTS */
+        #home {
+            min-height: 100vh;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255, 246, 229, 0.8), rgba(255, 246, 229, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 80px;
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: clamp(80px, 15vw, 150px);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FFF6E5'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .home-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 clamp(15px, 4vw, 40px);
+            width: 100%;
+        }
+
+        .couple-names {
+            font-family: 'Allura', cursive;
+            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            color: var(--dark-green);
+            margin-bottom: clamp(5px, 2vw, 10px);
+            line-height: 1;
+        }
+
+        .couple-names span {
+            font-family: 'Allura', cursive;
+            color: var(--dusty-rose);
+            margin: 0 clamp(5px, 2vw, 10px);
+        }
+
+        .wedding-date {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: var(--dusty-rose);
+            margin-bottom: clamp(5px, 2vw, 10px);
+            font-weight: 500;
+        }
+
+        .wedding-location {
+            font-family: 'Lora', serif;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--sage-green);
+            margin-bottom: clamp(20px, 4vw, 30px);
+            font-style: italic;
+        }
+
+        .welcome-message {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #666;
+            margin-bottom: clamp(25px, 5vw, 40px);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Lora', serif;
+            line-height: 1.7;
+        }
+
+        .invitation-line {
+            font-family: 'Allura', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--dusty-rose);
+            margin: clamp(15px, 3vw, 20px) 0;
+            line-height: 1.3;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 2vw, 20px);
+            margin-top: clamp(25px, 5vw, 40px);
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: clamp(10px, 2vw, 15px);
+            border-radius: 10px;
+            min-width: clamp(70px, 15vw, 100px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(159, 182, 165, 0.2);
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--dusty-rose);
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-family: 'Lora', serif;
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            color: var(--sage-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Our Story Section - RESPONSIVE IMPROVEMENTS */
+        #our-story {
+            background-color: white;
+            padding: clamp(50px, 8vw, 80px) 0;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(30px, 5vw, 50px);
+            align-items: center;
+        }
+
+        .story-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--dusty-rose);
+            margin-bottom: clamp(15px, 3vw, 20px);
+        }
+
+        .story-text p {
+            margin-bottom: clamp(15px, 3vw, 25px);
+            color: #666;
+            font-family: 'Lora', serif;
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            line-height: 1.7;
+        }
+
+        .engagement-photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(10px, 2vw, 15px);
+        }
+
+        .photo {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            aspect-ratio: 1/1;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .timeline {
+            margin-top: clamp(40px, 7vw, 60px);
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background-color: var(--blush-pink);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: clamp(25px, 5vw, 40px);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: clamp(15px, 3vw, 20px);
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(242, 198, 204, 0.3);
+        }
+
+        .timeline-date {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--sage-green);
+            margin-bottom: clamp(5px, 1vw, 10px);
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: clamp(15px, 3vw, 20px);
+            height: clamp(15px, 3vw, 20px);
+            background-color: var(--sage-green);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--blush-pink);
+        }
+
+        /* Wedding Details Section - RESPONSIVE IMPROVEMENTS */
+        #wedding-details {
+            background-color: var(--cream);
+            padding: clamp(50px, 8vw, 80px) 0;
+        }
+
+          /* accomidation Details Section - RESPONSIVE IMPROVEMENTS */
+        #accomidation-details {
+            background-color: white;
+            padding: clamp(50px, 8vw, 80px) 0;
+        }
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(30px, 5vw, 50px);
+        }
+
+        .details-card {
+            background-color: white;
+            padding: clamp(25px, 4vw, 40px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(159, 182, 165, 0.2);
+        }
+
+        .details-card h3 {
+            color: var(--dusty-rose);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: clamp(15px, 3vw, 25px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .details-card h3 i {
+            color: var(--sage-green);
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        .detail-item {
+            margin-bottom: clamp(15px, 3vw, 25px);
+        }
+
+        .detail-label {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-bottom: clamp(3px, 1vw, 5px);
+            display: block;
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+        }
+
+        .detail-value {
+            color: #666;
+            font-family: 'Lora', serif;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.6;
+        }
+
+        .map-container {
+            height: clamp(250px, 40vw, 400px);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: clamp(20px, 4vw, 30px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* RSVP Section - RESPONSIVE IMPROVEMENTS */
+        #rsvp {
+            background-color: white;
+            padding: clamp(50px, 8vw, 80px) 0;
+        }
+
+        .rsvp-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--cream);
+            padding: clamp(25px, 5vw, 50px) clamp(20px, 4vw, 50px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(159, 182, 165, 0.2);
+        }
+
+        .rsvp-title {
+            text-align: center;
+            font-family: 'Allura', cursive;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            color: var(--dark-green);
+            margin-bottom: clamp(5px, 1vw, 10px);
+            line-height: 1.2;
+        }
+
+        .rsvp-subtitle {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: var(--sage-green);
+            font-style: italic;
+            margin-bottom: clamp(20px, 4vw, 30px);
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+        }
+
+        .rsvp-form {
+            margin-top: clamp(20px, 4vw, 30px);
+        }
+
+        .form-group {
+            margin-bottom: clamp(15px, 3vw, 25px);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: clamp(5px, 1vw, 8px);
+            color: var(--dark-green);
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: clamp(10px, 2vw, 12px) clamp(12px, 2vw, 15px);
+            border: 1px solid rgba(159, 182, 165, 0.5);
+            border-radius: 8px;
+            font-family: 'Lora', serif;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            background-color: white;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sage-green);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            min-width: 18px;
+            min-height: 18px;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+        }
+
+        .submit-btn {
+            background-color: var(--sage-green);
+            color: white;
+            border: none;
+            padding: clamp(12px, 2vw, 15px) clamp(20px, 4vw, 30px);
+            font-size: clamp(1rem, 1.8vw, 1.1rem);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            width: 100%;
+            margin-top: clamp(10px, 2vw, 20px);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-green);
+        }
+
+        /* Footer - RESPONSIVE IMPROVEMENTS */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: clamp(30px, 5vw, 40px) 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(15px, 3vw, 20px);
+        }
+
+        .footer-logo {
+            font-family: 'Allura', cursive;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: white;
+            line-height: 1;
+        }
+
+        .footer-logo span {
+            color: var(--blush-pink);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            font-family: 'Lora', serif;
+            text-align: center;
+        }
+
+        /* Responsive Design - ENHANCED */
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .nav-links {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--cream);
+                flex-direction: column;
+                text-align: center;
+                padding: 80px 20px 40px;
+                z-index: 999;
+                justify-content: flex-start;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                font-size: 1.3rem;
+                padding: 10px;
+                display: block;
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .engagement-photos {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn.active {
+                position: fixed;
+                right: 20px;
+                top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .home-content {
+                padding: 0 15px;
+            }
+            
+            .details-card {
+                padding: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                max-width: 80px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+            
+            .timeline-dot {
+                left: 25px;
+                width: 15px;
+                height: 15px;
+            }
+            
+            .rsvp-container {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .couple-names {
+                font-size: 3rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-item {
+                min-width: 65px;
+            }
+            
+            .countdown-number {
+                font-size: 1.6rem;
+            }
+            
+            .rsvp-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Header scroll effect */
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 246, 229, 0.98);
+        }
+
+        /* Prevent scroll when mobile menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+            /* Accommodations Section */
+        #accommodations {
+            background-color: var(--light-ivory);
+        }
+
+        .accommodations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .hotel-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotel-info {
+            padding: 25px;
+        }
+
+        .hotel-info h3 {
+            color: var(--rose-gold);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .hotel-info p {
+            margin-bottom: 10px;
+            color: #6a6a6a;
+        }
+
+        .hotel-info i {
+            color: var(--rose-gold);
+            margin-right: 10px;
+            width: 20px;
+        }
